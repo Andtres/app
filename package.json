@@ -1,0 +1,29 @@
+{
+  "name": "root",
+  "private": true,  
+  "scripts": {
+    "bootstrap": "yarn install  && nps bootstrap",
+    "regenerate": "lerna clean --yes && rm -rf ./node_modules  && yarn bootstrap",
+    "lint": "nps lint",
+    "test": "nps test",
+    "commit": "npx git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^4.15.2",
+    "cz-conventional-changelog": "3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.4",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2"
+  }
+}
